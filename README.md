@@ -1,6 +1,6 @@
 # ImageComparisonTool
 
-A Python CLI tool to compare images listed in a CSV file and calculates similarity score of two images.
+A Python CLI tool to compare images listed in a CSV file and calculates similarity score of two images along with elapsed time.
 
 ## How this tool can be useful?
 
