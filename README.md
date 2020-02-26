@@ -60,11 +60,11 @@ https://packaging.python.org/guides/installing-using-pip-and-virtual-environment
 Yes, you can! Actually images are essentially bitmaps and bitmaps are stored in the form of pixels in the computers memory. So, if we are able to make some computation around the pixels, then we can play around with pictures with the help of computer programming.
 
 #### Say No to Checksums when it comes to images
-We can use the checksums to compare the images but we can cannot know how similar these two images are with that approach.
+We can use the checksums to compare the images but we can cannot quantify the difference. A single change can drastically change the checksum.
 
 #### RMSE to the Rescue (Root Mean Square Error)
 
-A blog post actually described, calculating root mean square error value can help in identfying images which are not similar and those which aren't on how much similar they are.
+A blog post actually described, calculating root mean square error value can help in identfying images which are similar (0 value) and those which aren't on how much different they are.
 
                          Lower the value of RMSE ----> More similar images are!
 
