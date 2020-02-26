@@ -106,10 +106,11 @@ Note : The elapsed time is in seconds
 
 You can also type --help to check the usage of the command
 
-```python3 image_comparison.py --help
+```
+   python3 image_comparison.py --help
+   
    usage: image_comparison.py [-h] [--src SRC] [--dest DEST]
-
-optional arguments:
+   optional arguments:
   -h, --help   show this help message and exit
   --src SRC    Path to source file
   --dest DEST  Path for destination file
