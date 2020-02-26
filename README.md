@@ -31,3 +31,28 @@ The script by default creates a file in the current working directory with name 
 | images/file3.jpg  | images/file4.jpg  | 0.0               | 0.0445  |
 
 
+## Installation
+
+### Prerequisites
+
+#### Setup Python Virtual Env
+
+You need to install python virtualenv to make this program run in an isolated environment with its own version of modules.
+
+For instructions setting up the same on (MacOs/Windows/Linux), please follow the link below
+
+https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/
+
+#### Clone the repository and activate virtual environment using commands below
+
+-  ``` git clone https://github.com/abbasalizaidi/ImageComparisonTool/ ```
+-  ``` virtualenv ImageComparisonTool ```
+-  ``` cd ImageComparisonTool/ ```
+-  ``` source bin/activate ```
+
+#### Install the requirements using the requirement files
+-  ``` pip3 install -r requirements.txt ```
+
+
+
+
