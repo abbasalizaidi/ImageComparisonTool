@@ -1,16 +1,16 @@
 '''This program compares and calculates
 the difference (score) between two images
 input - csv file and output - csv file'''
+import argparse
 import csv
 import math
+import sys
 import time
-import argparse
 from PIL import Image, ImageChops
 
+# pylint: disable=C0103,R0914
 
-# pylint: disable=C0103
-
-def image_comparison(im1, im2):
+def calculate_rms(im1, im2):  ## calculate rms
     """Calculate the root-mean-square difference between two images"""
     diff = ImageChops.difference(im1, im2)
     histogram = diff.histogram()
@@ -20,14 +20,12 @@ def image_comparison(im1, im2):
     return rms
 
 
-if __name__ == "__main__":
-    # Open the files to read and write
-    parser = argparse.ArgumentParser()
-    parser.add_argument("--src", type=str, help="Path to source file", default = "image_database.csv")
-    parser.add_argument("--dest", type=str, help="Path for destination file", default="output.csv")
-    args = parser.parse_args()
+def image_comparison(src_file, dest_file):
+    """Compare the images listed in input csv file
+        and outputs the score,elapsed time along with it
+        into the output csv file"""
     try:
-        with open(str(args.src), mode='r') as f, open(str(args.dest), mode="w") as csv_file:
+        with open(str(src_file), mode='r') as f, open(str(dest_file), mode="w") as csv_file:
             fieldnames = ["Image1", "Image2", "Similar", "Elapsed"]
             writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
             writer.writeheader()
@@ -37,11 +35,27 @@ if __name__ == "__main__":
                 src = Image.open(image_list[item][0])
                 dest = Image.open(image_list[item][1])
                 start_time = time.time()
-                score = image_comparison(src, dest)
+                score = calculate_rms(src, dest)
                 end_time = time.time()
                 elapsed_time = round(end_time - start_time, 4)
                 writer.writerow({"Image1": image_list[item][0], "Image2": image_list[item][1],
                                  "Similar": score, "Elapsed": elapsed_time})
     except IOError as exception:
         if exception.strerror == "No such file or directory":
-            print(f"Please check the file exists or not! - {exception.strerror} ")
+            print(f"Please check the file exists or not - {exception.strerror}")
+        else:
+            print(f"Here is the Error - {exception.strerror}")
+
+
+if __name__ == "__main__":
+    # Argument Parsing
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--src", type=str, help="Path to source file")
+    parser.add_argument("--dest", type=str, help="Path for destination file")
+    args = parser.parse_args()
+    if len(sys.argv) < 5:
+        print("Too few Arguments!!")
+        print("Check the usage using --help flag")
+        sys.exit(1)
+    else:
+        image_comparison(args.src, args.dest)
