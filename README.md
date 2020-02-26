@@ -57,7 +57,7 @@ https://packaging.python.org/guides/installing-using-pip-and-virtual-environment
 
 #### How can I possibly compare the image without seeing it?
 
-Yes,you can! Actually images are essentially bitmaps and bitmaps are stored in the form of pixels in the computers memory. So, if we are able to make some computation around the pixels, then we can play around with pictures with the help of computer programming.
+Yes, you can! Actually images are essentially bitmaps and bitmaps are stored in the form of pixels in the computers memory. So, if we are able to make some computation around the pixels, then we can play around with pictures with the help of computer programming.
 
 #### Say No to Checksums when it comes to images
 We can use the checksums to compare the images but we can cannot know how similar these two images are with that approach.
