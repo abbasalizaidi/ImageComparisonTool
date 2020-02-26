@@ -115,4 +115,4 @@ You can also type --help to check the usage of the command
   --src SRC    Path to source file
   --dest DEST  Path for destination file
 ```
-#### Note:- Master branch contains the stable code always!
+#### Note:- Go to Release options to check the latest stable release.
