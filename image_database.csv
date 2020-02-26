@@ -1,7 +1,7 @@
 ﻿Image1,Image2
-file1.jpg,file2.jpg
-file3.jpg,file4.jpg
-file5.png,file6.png
-file8.png,file9.png
-file10.gif,file11.gif
-file3.jpg,file4.jpg
+images/file1.jpg,images/file2.jpg
+images/file3.jpg,images/file4.jpg
+images/file5.png,images/file6.png
+images/file8.png,images/file9.png
+images/file10.gi,images/ffile11.gif
+images/file3.jpg,images/file4.jpg
