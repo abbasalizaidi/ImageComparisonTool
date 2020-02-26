@@ -1,6 +1,6 @@
-'''This program compares and calculates
+"""This program compares and calculates
 the difference (score) between two images
-input - csv file and output - csv file'''
+input - csv file and output - csv file"""
 import argparse
 import csv
 import math
